@@ -5,7 +5,7 @@ import AddAppointments from './AddAppointments';
 import SearchAppointments from './SearchAppointments';
 import ListAppointments from './ListAppointments';
 import SuccessAlert from './SuccessAlert';
-import { filter, result, without } from "lodash";
+import { without } from "lodash";
 
 class App extends Component {
 

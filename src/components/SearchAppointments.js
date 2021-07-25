@@ -1,12 +1,6 @@
 import React, {Component} from 'react';
-import { render } from 'react-dom';
 
 class SearchAppointments extends Component {
-
-    constructor(){
-        super();
-        
-    }
 
     render(){
         return (

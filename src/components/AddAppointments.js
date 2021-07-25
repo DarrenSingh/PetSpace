@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {FaPlus} from 'react-icons/fa';
-import { render } from 'react-dom';
 import '../css/App.css';
 
 class AddAppointments extends Component {
