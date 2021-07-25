@@ -18,6 +18,7 @@ class SearchAppointments extends Component {
                   type="text"
                   className="form-control"
                   aria-label="Search Appointments"
+                  placeholder="Search by Pet Name, Owner Name, Description or Date"
                   onChange={e => this.props.searchAppointment(e.target.value)}
                 />
                 <div className="input-group-append">

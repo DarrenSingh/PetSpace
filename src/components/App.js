@@ -4,6 +4,7 @@ import '../css/App.css'
 import AddAppointments from './AddAppointments';
 import SearchAppointments from './SearchAppointments';
 import ListAppointments from './ListAppointments';
+import SuccessAlert from './SuccessAlert';
 import { filter, result, without } from "lodash";
 
 class App extends Component {
@@ -15,9 +16,10 @@ class App extends Component {
     //allows you to set properties within the class
     this.state = {
       lastIndex : 0,
-      orderBy: 'petName',
-      orderDir: 'asc',
+      orderBy: 'aptDate',
+      orderDir: 'desc',
       queryText: '',
+      showAlert: false,
       myAppointments : []
     }
     //pass the current objects context(this) to the deleteAppointment method
@@ -26,6 +28,7 @@ class App extends Component {
     this.addAppointment = this.addAppointment.bind(this);
     this.toggleFormDisplay = this.toggleFormDisplay.bind(this);
     this.changeOrder = this.changeOrder.bind(this);
+    this.sleep = this.sleep.bind(this);
   }
   
   /** COMPONENT METHODS **/
@@ -52,8 +55,20 @@ class App extends Component {
 
     this.setState({
       myAppointments: tempApts,
-      lastIndex: this.state.lastIndex + 1
+      lastIndex: this.state.lastIndex + 1,
+      showAlert: true
     });
+  
+    this.sleep(4000).then(() => { 
+      this.setState({
+        showAlert: false
+      });
+    });
+
+  }
+
+  sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 
   changeOrder(category, direction){
@@ -143,6 +158,7 @@ class App extends Component {
                 addAppointment={this.addAppointment}
                 toggleFormDisplay={this.toggleFormDisplay}
                 />
+                { this.state.showAlert ? <SuccessAlert /> : null }
                 <SearchAppointments 
                 orderBy={this.state.orderBy}
                 orderDir={this.state.orderDir}

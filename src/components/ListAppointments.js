@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FaTimes } from 'react-icons/fa'
+import { FaRegTimesCircle } from 'react-icons/fa'
 import Moment from 'react-moment';
 
 class ListAppointments extends Component {
@@ -21,10 +21,10 @@ class ListAppointments extends Component {
             {this.props.appointments.map(item => (
             <div className="pet-item col media py-3" key={item.aptId}>
                 <div className="mr-3">
-                <button className="pet-delete btn btn-sm btn-danger"
-                onClick={() => this.props.deleteAppointment(item)}>
+               
                 {/* third-party component based icon used inside the button */}
-                <FaTimes /></button>
+                <button className="btn"><FaRegTimesCircle className="pet-delete" onClick={() => this.props.deleteAppointment(item)}/>
+                </button>
                 </div>
 
                 <div className="pet-info media-body">
