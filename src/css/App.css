@@ -21,14 +21,14 @@
 
 .appointment-list .pet-name {
   font-weight: 600;
-  color: #337ab7;
+  color: #7C83FD;
   font-size: 1.3em;
   line-height: 100%;
 }
 
 .appointment-list .label-item {
   font-weight: 600;
-  color: #667b82;
+  color: #4C4C6D;
 }
 
 .appointment-list .apt-date {
@@ -39,7 +39,22 @@
   line-height: 120%;
 }
 
+
 .dropdown-item.active,
 .dropdown-item:active {
-  background-color: #a9aeb2;
+  color: #E8F6EF;
+  background-color: #7C83FD;
+}
+
+.pet-delete{
+  color: #ff1100;
+}
+
+#SearchApts::placeholder{
+  color: lightgrey;
+  font-size: .9em ;
+}
+
+.pet-delete:hover{
+  color: #ff11008f;
 }
